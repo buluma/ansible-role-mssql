@@ -18,7 +18,7 @@ molecule:
     matrix:
       - image: "amazonlinux"
         tag: "latest"
-      - image: "centos"
+      - image: "enterpriselinux"
         tag: "7"
 
 testing:
@@ -52,7 +52,7 @@ role_testing:
     matrix:
       - image: "amazonlinux"
         tag: "latest"
-      - image: "centos"
+      - image: "enterpriselinux"
         tag: "7"
 
 release_job:
