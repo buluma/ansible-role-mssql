@@ -20,6 +20,8 @@ molecule:
         tag: "latest"
       - image: "enterpriselinux"
         tag: "7"
+      - image: "docker-centos7-ansible"
+        tag: "latest"
 
 testing:
   stage: test
@@ -35,6 +37,8 @@ testing:
         tag: "latest"
       - image: "enterpriselinux"
         tag: "7"
+      - image: "docker-centos7-ansible"
+        tag: "latest"
 
 galaxy:
   stage: deploy
@@ -54,6 +58,8 @@ role_testing:
         tag: "latest"
       - image: "enterpriselinux"
         tag: "7"
+      - image: "docker-centos7-ansible"
+        tag: "latest"
 
 release_job:
   stage: .post
