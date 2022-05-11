@@ -38,7 +38,7 @@ jobs:
         config:
           - image: "amazonlinux"
             tag: "latest"
-          - image: "centos"
+          - image: "enterpriselinux"
             tag: "7"
     steps:
       - name: checkout

@@ -33,7 +33,7 @@ testing:
     matrix:
       - image: "amazonlinux"
         tag: "latest"
-      - image: "centos"
+      - image: "enterpriselinux"
         tag: "7"
 
 galaxy:
