@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.3.0](https://github.com/buluma/ansible-role-mssql/tree/0.3.0) (2024-01-20)
+
+[Full Changelog](https://github.com/buluma/ansible-role-mssql/compare/0.2.0...0.3.0)
+
 ## [0.2.0](https://github.com/buluma/ansible-role-mssql/tree/0.2.0) (2024-01-02)
 
 [Full Changelog](https://github.com/buluma/ansible-role-mssql/compare/0.1.3...0.2.0)
