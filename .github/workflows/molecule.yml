@@ -46,8 +46,8 @@ jobs:
       fail-fast: false
       matrix:
         config:
-          - image: "amazonlinux"
-            tag: "latest"
+          - image: "docker-molecule-images"
+            tag: "amazonlinux2023"
           - image: "enterpriselinux"
             tag: "8"
     steps:
@@ -84,3 +84,13 @@ jobs:
         env:
           PR_URL: ${{github.event.pull_request.html_url}}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  # test_role:
+  #   needs:
+  #     - lint
+  #     - test
+  #   runs-on: ubuntu-20.04
+  #
+  #   steps:
+  #     - uses: "actions/checkout@master"
+  #     - name: Test Role
+  #       run: "ansible-galaxy role import --api-key {{ secrets.galaxy_api_key }} buluma {{ role_name }}"

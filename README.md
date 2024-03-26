@@ -14,8 +14,8 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
 ---
 - name: Converge
   hosts: all
-  become: yes
-  gather_facts: yes
+  become: true
+  gather_facts: true
 
   roles:
     - role: buluma.mssql
@@ -27,8 +27,8 @@ The machine needs to be prepared. In CI this is done using [`molecule/default/pr
 ---
 - name: Prepare
   hosts: all
-  gather_facts: no
-  become: yes
+  gather_facts: false
+  become: true
 
   roles:
     - role: buluma.bootstrap
@@ -48,8 +48,8 @@ The default values for the variables are set in [`defaults/main.yml`](https://gi
 # defaults file for mssql
 
 # mssql_add_repositories can be used to select if you want the repositories installed by this role.
-# See vars/main.yml for the location of the repositories. Can be: yes, true or 1.
-mssql_add_repositories: yes
+# See vars/main.yml for the location of the repositories. Can be: true, true or 1.
+mssql_add_repositories: true
 
 # What version to use, currently either 2017 or 2019.
 # `2017` is the only working version now, `2019` lacks the required
@@ -79,8 +79,8 @@ mssql_sa_password: "StR0nGp4ss."
 # - A product key (Format: #####-#####-#####-#####-#####)
 mssql_pid: Evaluation
 
-# To enable full text search, set this value to yes.
-mssql_fts: no
+# To enable full text search, set this value to true.
+mssql_fts: false
 ```
 
 ## [Requirements](#requirements)
