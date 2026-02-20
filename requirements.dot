@@ -1,0 +1,15 @@
+digraph PhiloDilemma {
+  label = "Michael Buluma" ;
+  overlap=false
+  {
+    "mssql" [fillcolor=yellow style=filled penwidth=3]
+    "buluma.bootstrap" [fillcolor=green style=filled]
+    "buluma.ca_certificates" [fillcolor=green style=filled]
+    "buluma.core_dependencies" [fillcolor=green style=filled]
+    "buluma.microsoft_repository_keys" [fillcolor=green style=filled]
+  }
+  "mssql" -> "buluma.bootstrap"
+  "mssql" -> "buluma.ca_certificates"
+  "mssql" -> "buluma.core_dependencies"
+  "mssql" -> "buluma.microsoft_repository_keys"
+}
