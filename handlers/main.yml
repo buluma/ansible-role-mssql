@@ -18,7 +18,7 @@
   environment:
     MSSQL_SA_PASSWORD: "{{ mssql_sa_password }}"
     MSSQL_PID: "{{ mssql_pid }}"
-    ACCEPT_EULA: Y
+    ACCEPT_EULA: true
 
 - name: Set network.ipaddress
   ansible.builtin.command:
