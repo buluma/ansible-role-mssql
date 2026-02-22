@@ -1,10 +1,12 @@
 ---
+dependencies: []
 galaxy_info:
   author: buluma
-  role_name: mssql
-  description: Install and configure mssql on your system.
-  license: Apache-2.0
   company: ShadowNet
+  description: Install and configure mssql on your system.
+  galaxy_tags:
+    - mssql
+  license: Apache-2.0
   min_ansible_version: "2.12"
   platforms:
     - name: Amazon
@@ -13,6 +15,4 @@ galaxy_info:
     - name: EL
       versions:
         - all
-  galaxy_tags:
-    - mssql
-dependencies: []
+  role_name: mssql

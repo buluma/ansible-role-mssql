@@ -11,30 +11,26 @@ Install and configure mssql on your system.
 This example is taken from [`molecule/default/converge.yml`](https://github.com/buluma/ansible-role-mssql/blob/master/molecule/default/converge.yml) and is tested on each push, pull request and release.
 
 ```yaml
----
-- name: Converge
-  hosts: all
-  become: true
+- become: true
   gather_facts: true
-
+  hosts: all
+  name: Converge
   roles:
-    - role: buluma.mssql
+  - role: buluma.mssql
 ```
 
 The machine needs to be prepared. In CI this is done using [`molecule/default/prepare.yml`](https://github.com/buluma/ansible-role-mssql/blob/master/molecule/default/prepare.yml):
 
 ```yaml
----
-- name: Prepare
-  hosts: all
+- become: true
   gather_facts: false
-  become: true
-
+  hosts: all
+  name: Prepare
   roles:
-    - role: buluma.bootstrap
-    - role: buluma.core_dependencies
-    - role: buluma.ca_certificates
-    - role: buluma.microsoft_repository_keys
+  - role: buluma.bootstrap
+  - role: buluma.core_dependencies
+  - role: buluma.ca_certificates
+  - role: buluma.microsoft_repository_keys
 ```
 
 Also see a [full explanation and example](https://buluma.github.io/how-to-use-these-roles.html) on how to use these roles.
@@ -44,43 +40,13 @@ Also see a [full explanation and example](https://buluma.github.io/how-to-use-th
 The default values for the variables are set in [`defaults/main.yml`](https://github.com/buluma/ansible-role-mssql/blob/master/defaults/main.yml):
 
 ```yaml
----
-# defaults file for mssql
-
-# mssql_add_repositories can be used to select if you want the repositories installed by this role.
-# See vars/main.yml for the location of the repositories. Can be: true, true or 1.
 mssql_add_repositories: true
-
-# What version to use, currently either 2017 or 2019.
-# `2017` is the only working version now, `2019` lacks the required
-# mssql-server-agent package.
-mssql_version: "2017"
-
-# Select the version of server and server_agent to install.
-mssql_server_version: "14.0.3294.2-27"
-mssql_server_agent_version: "14.0.3015.40-1"
-
-# mssql_sa_password contains the password for a system administrator.
-# The password must be at least 8 characters long and contain characters from
-# three of the following four sets:
-# - uppercase letters
-# - lowercase letters
-# - numbers
-# - and symbols
-mssql_sa_password: "StR0nGp4ss."
-
-# mssql_pid refers to the product key to use. Either:
-# - Evaluation
-# - Developer
-# - Express
-# - Web
-# - Standard
-# - Enterprise
-# - A product key (Format: #####-#####-#####-#####-#####)
-mssql_pid: Evaluation
-
-# To enable full text search, set this value to true.
 mssql_fts: false
+mssql_pid: Evaluation
+mssql_sa_password: StR0nGp4ss.
+mssql_server_agent_version: 14.0.3015.40-1
+mssql_server_version: 14.0.3294.2-27
+mssql_version: '2017'
 ```
 
 ## [Requirements](#requirements)
