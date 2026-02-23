@@ -11,26 +11,28 @@ Install and configure mssql on your system.
 This example is taken from [`molecule/default/converge.yml`](https://github.com/buluma/ansible-role-mssql/blob/master/molecule/default/converge.yml) and is tested on each push, pull request and release.
 
 ```yaml
-- become: true
-  gather_facts: true
-  hosts: all
-  name: Converge
-  roles:
-  - role: buluma.mssql
+---
+  - become: true
+    gather_facts: true
+    hosts: all
+    name: Converge
+    roles:
+      - role: buluma.mssql
 ```
 
 The machine needs to be prepared. In CI this is done using [`molecule/default/prepare.yml`](https://github.com/buluma/ansible-role-mssql/blob/master/molecule/default/prepare.yml):
 
 ```yaml
-- become: true
-  gather_facts: false
-  hosts: all
-  name: Prepare
-  roles:
-  - role: buluma.bootstrap
-  - role: buluma.core_dependencies
-  - role: buluma.ca_certificates
-  - role: buluma.microsoft_repository_keys
+---
+  - become: true
+    gather_facts: false
+    hosts: all
+    name: Prepare
+    roles:
+      - role: buluma.bootstrap
+      - role: buluma.core_dependencies
+      - role: buluma.ca_certificates
+      - role: buluma.microsoft_repository_keys
 ```
 
 Also see a [full explanation and example](https://buluma.github.io/how-to-use-these-roles.html) on how to use these roles.
@@ -40,13 +42,14 @@ Also see a [full explanation and example](https://buluma.github.io/how-to-use-th
 The default values for the variables are set in [`defaults/main.yml`](https://github.com/buluma/ansible-role-mssql/blob/master/defaults/main.yml):
 
 ```yaml
+---
 mssql_add_repositories: true
 mssql_fts: false
 mssql_pid: Evaluation
 mssql_sa_password: StR0nGp4ss.
 mssql_server_agent_version: 14.0.3015.40-1
 mssql_server_version: 14.0.3294.2-27
-mssql_version: '2017'
+mssql_version: "2017"
 ```
 
 ## [Requirements](#requirements)
