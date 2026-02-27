@@ -1,28 +1,21 @@
 ---
-# handlers file for mssql
-
 - name: Stop mssql-server
   ansible.builtin.service:
     name: mssql-server
     state: stopped
-  when:
-    - not ansible_check_mode | bool
-
 - name: Restart mssql-server
   ansible.builtin.service:
     name: mssql-server
     state: restarted
-  when:
-    - not ansible_check_mode | bool
-
 - name: Configure mssql-server using mssql-conf
   ansible.builtin.command:
     cmd: /opt/mssql/bin/mssql-conf -n setup
+  changed_when: true
   environment:
-    MSSQL_SA_PASSWORD: "{{ mssql_sa_password }}"
+    ACCEPT_EULA: true
     MSSQL_PID: "{{ mssql_pid }}"
-    ACCEPT_EULA: Y
-
+    MSSQL_SA_PASSWORD: "{{ mssql_sa_password }}"
 - name: Set network.ipaddress
   ansible.builtin.command:
     cmd: /opt/mssql/bin/mssql-conf set network.ipaddress {{ ansible_default_ipv4.address | default(ansible_all_ipv4_addresses[0]) }}
+  changed_when: true

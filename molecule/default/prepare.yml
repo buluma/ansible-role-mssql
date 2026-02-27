@@ -1,11 +1,9 @@
----
-- name: Prepare
+- become: true
+  gather_facts: false
   hosts: all
-  gather_facts: no
-  become: yes
-
+  name: Prepare
   roles:
-    - role: buluma.bootstrap
-    - role: buluma.core_dependencies
-    - role: buluma.ca_certificates
-    - role: buluma.microsoft_repository_keys
+  - role: buluma.bootstrap
+  - role: buluma.core_dependencies
+  - role: buluma.ca_certificates
+  - role: buluma.microsoft_repository_keys
