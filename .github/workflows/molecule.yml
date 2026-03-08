@@ -10,12 +10,16 @@ on:
     branches:
       - master
       - main
+      - codex
+      - testing
   pull_request:
     branches:
       - master
       - main
+      - codex
+      - testing
   schedule:
-    - cron: "25 13 13 * *"
+    - cron: '25 13 13 * *'
 
   workflow_dispatch:
 
@@ -40,8 +44,8 @@ jobs:
       fail-fast: false
       matrix:
         distro:
-          - image: "docker-molecule-images"
-            tag: "amazonlinux2023"
+          - image: "amazonlinux"
+            tag: "latest"
           - image: "enterpriselinux"
             tag: "latest"
     steps:
