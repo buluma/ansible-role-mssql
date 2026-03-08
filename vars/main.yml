@@ -10,7 +10,7 @@ _mssql_server_package:
   RedHat: mssql-server
   Suse: mssql-server-{{ mssql_server_version }}
 mssql_fts_package: mssql-server-fts
-mssql_gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+mssql_gpgkey: "https://packages.microsoft.com/keys/microsoft.asc"
 mssql_rhel_repositories:
   - baseurl: https://packages.microsoft.com/rhel/7/mssql-server-{{ mssql_version }}/
     description: Microsoft MSSQL server

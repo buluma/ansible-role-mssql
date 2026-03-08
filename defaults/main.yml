@@ -3,6 +3,6 @@ mssql_add_repositories: true
 mssql_fts: false
 mssql_pid: Evaluation
 mssql_sa_password: StR0nGp4ss.
-mssql_server_agent_version: 14.0.3015.40-1
-mssql_server_version: 14.0.3294.2-27
+mssql_server_agent_version: "14.0.3015.40-1"
+mssql_server_version: "14.0.3294.2-27"
 mssql_version: "2017"
