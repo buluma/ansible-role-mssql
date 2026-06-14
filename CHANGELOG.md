@@ -1,5 +1,16 @@
 # Changelog
 
+## [26.6.0](https://github.com/buluma/ansible-role-mssql/tree/26.6.0) (2026-06-14)
+
+[Full Changelog](https://github.com/buluma/ansible-role-mssql/compare/0.3.0...26.6.0)
+
+**Merged pull requests:**
+
+- Bump ansible/ansible-lint from 26.2.0 to 26.3.0 [\#11](https://github.com/buluma/ansible-role-mssql/pull/11) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump ansible/ansible-lint from 26.1.1 to 26.2.0 [\#9](https://github.com/buluma/ansible-role-mssql/pull/9) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump actions/checkout from 4 to 6 [\#8](https://github.com/buluma/ansible-role-mssql/pull/8) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump buluma/molecule-action from 5.0.1 to 5.0.4 [\#5](https://github.com/buluma/ansible-role-mssql/pull/5) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [0.3.0](https://github.com/buluma/ansible-role-mssql/tree/0.3.0) (2024-01-20)
 
 [Full Changelog](https://github.com/buluma/ansible-role-mssql/compare/0.2.0...0.3.0)
