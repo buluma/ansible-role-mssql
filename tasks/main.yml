@@ -15,15 +15,15 @@
   loop_control:
     label: "{{ item.name }}"
   when:
-    - ansible_distribution in [ "CentOS", "Fedora", "RedHat", "Rocky", "Amazon" ]
+    - ansible_facts.distribution in [ "CentOS", "Fedora", "RedHat", "Rocky", "Amazon" ]
     - mssql_add_repositories
 - name: Add apt repository
   ansible.builtin.apt_repository:
-    repo: deb [arch=amd64,arm64,armhf] "{{ item.repo }}" {{ ansible_distribution_release }} main
+    repo: deb [arch=amd64,arm64,armhf] "{{ item.repo }}" {{ ansible_facts.distribution_release }} main
     state: present
   loop: "{{ mssql_ubuntu_repositories }}"
   when:
-    - ansible_os_family == "Debian"
+    - ansible_facts.os_family == "Debian"
     - mssql_add_repositories
 - name: Install software mssql-server (package)
   ansible.builtin.package:
@@ -36,7 +36,7 @@
     - Configure mssql-server using mssql-conf
     - Set network.ipaddress
   when:
-    - ansible_distribution != "Ubuntu"
+    - ansible_facts.distribution != "Ubuntu"
 - name: Install software in mssql-server (apt)
   ansible.builtin.apt:
     allow_unauthenticated: true
@@ -47,7 +47,7 @@
   notify:
     - Configure mssql-server using mssql-conf
   when:
-    - ansible_distribution == "Ubuntu"
+    - ansible_facts.distribution == "Ubuntu"
 - name: Flush handlers
   ansible.builtin.meta: flush_handlers
 - name: Install software mssql-tools (package)
@@ -57,7 +57,7 @@
   environment:
     ACCEPT_EULA: "Y"
   when:
-    - ansible_distribution != "Ubuntu"
+    - ansible_facts.distribution != "Ubuntu"
 - name: Install software in mssql-tools (apt)
   ansible.builtin.apt:
     allow_unauthenticated: true
@@ -66,7 +66,7 @@
   environment:
     ACCEPT_EULA: "Y"
   when:
-    - ansible_distribution == "Ubuntu"
+    - ansible_facts.distribution == "Ubuntu"
 - name: Install software mssql-server-agent (package)
   ansible.builtin.package:
     name: "{{ mssql_server_agent_package }}"
@@ -76,7 +76,7 @@
   notify:
     - Restart mssql-server
   when:
-    - ansible_distribution != "Ubuntu" and mssql_version == 2017
+    - ansible_facts.distribution != "Ubuntu" and mssql_version == 2017
 - name: Install software in mssql-server-agent (apt)
   ansible.builtin.apt:
     allow_unauthenticated: true
@@ -87,7 +87,7 @@
   notify:
     - Restart mssql-server
   when:
-    - ansible_distribution == "Ubuntu" and mssql_version == 2017
+    - ansible_facts.distribution == "Ubuntu" and mssql_version == 2017
 - name: Install mssql-server-fts
   ansible.builtin.package:
     name: "{{ mssql_fts_package }}"
