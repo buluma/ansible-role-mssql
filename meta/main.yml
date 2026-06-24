@@ -12,4 +12,16 @@ galaxy_info:
     - name: EL
       versions:
         - all
+    - name: Debian
+      versions:
+        - all
+    - name: Fedora
+      versions:
+        - all
+    - name: Suse
+      versions:
+        - all
+    - name: Ubuntu
+      versions:
+        - all
   role_name: mssql
