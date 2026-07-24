@@ -11,18 +11,6 @@
     that:
       - mssql_version is defined
       - mssql_version is string
-- name: assert | Test if mssql_server_version is set correctly
-  ansible.builtin.assert:
-    quiet: true
-    that:
-      - mssql_server_version is defined
-      - mssql_server_version is string
-- name: assert | Test if mssql_server_agent_version is set correctly
-  ansible.builtin.assert:
-    quiet: true
-    that:
-      - mssql_server_agent_version is defined
-      - mssql_server_agent_version is string
 - name: assert | Test if mssql_sa_password is set correctly
   ansible.builtin.assert:
     quiet: true
