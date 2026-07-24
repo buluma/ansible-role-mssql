@@ -3,7 +3,7 @@
   ansible.builtin.import_tasks: assert.yml
   delegate_to: localhost
   run_once: true
-- name: Add yum repository packages-microsoft-com-mssql-server-2019
+- name: Add yum repository packages-microsoft-com-mssql-server
   ansible.builtin.yum_repository:
     baseurl: "{{ item.baseurl }}"
     description: "{{ item.description }}"
@@ -15,7 +15,7 @@
   loop_control:
     label: "{{ item.name }}"
   when:
-    - ansible_facts['distribution'] in [ "CentOS", "Fedora", "RedHat", "Rocky", "Amazon" ]
+    - ansible_facts['distribution'] in [ "AlmaLinux", "CentOS", "Fedora", "RedHat", "Rocky", "Amazon" ]
     - mssql_add_repositories
 - name: Add apt repository
   ansible.builtin.apt_repository:
