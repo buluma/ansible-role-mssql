@@ -77,9 +77,7 @@ mssql_add_repositories: true
 mssql_fts: false
 mssql_pid: Evaluation
 mssql_sa_password: StR0nGp4ss.
-mssql_server_agent_version: "14.0.3015.40-1"
-mssql_server_version: "14.0.3294.2-27"
-mssql_version: "2017"
+mssql_version: "2022"
 ```
 
 ## [Requirements](#requirements)
@@ -111,10 +109,8 @@ This role has been tested on these [container images](https://hub.docker.com/u/b
 
 |container|tags|
 |---------|----|
-|[EL](https://hub.docker.com/r/buluma/docker-molecule-images)|10, 9|
-|[Debian](https://hub.docker.com/r/buluma/docker-molecule-images)|all|
-|[Fedora](https://hub.docker.com/r/buluma/docker-molecule-images)|44, 43|
-|[Ubuntu](https://hub.docker.com/r/buluma/docker-molecule-images)|all|
+|[EL](https://hub.docker.com/r/buluma/docker-molecule-images)|9|
+|[Ubuntu](https://hub.docker.com/r/buluma/docker-molecule-images)|22.04|
 
 The minimum version of Ansible required is 2.19, tests have been done on:
 
